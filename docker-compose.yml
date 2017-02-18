@@ -10,9 +10,13 @@ services:
     volumes:
       - .:/code
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: server.dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - ./server:/code
     links:
       - db
+    ports:
+      - "8000:8000"
