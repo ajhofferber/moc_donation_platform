@@ -5,7 +5,7 @@ services:
   node:
     build:
       context: .
-      dockerfile: client2/client.dockerfile
+      dockerfile: client.dockerfile
     command: npm start
     volumes:
       - .:/code
