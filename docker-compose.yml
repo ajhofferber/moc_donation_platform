@@ -1,0 +1,18 @@
+version: '2'
+services:
+  db:
+    image: postgres:9
+  node:
+    build:
+      context: .
+      dockerfile: client2/client.dockerfile
+    command: npm start
+    volumes:
+      - .:/code
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    links:
+      - db

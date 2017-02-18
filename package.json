@@ -1,0 +1,43 @@
+{
+  "name": "moc_donation_platform",
+  "version": "1.0.0",
+  "description": "Museum of Capitalism Artifact Donation Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-server": "webpack-dev-server --config client/webpack.config.js --inline --hot --host 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajhofferber/moc_donation_platform.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajhofferber/moc_donation_platform/issues"
+  },
+  "homepage": "https://github.com/ajhofferber/moc_donation_platform#readme",
+  "devDependencies": {
+    "@angular/platform-browser": "^2.4.7",
+    "@types/node": "^7.0.5",
+    "awesome-typescript-loader": "^3.0.4",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.10.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.28.0",
+    "node-sass": "^4.5.0",
+    "rxjs": "^5.1.1",
+    "style-loader": "^0.13.1",
+    "typescript": "^2.1.6",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0",
+    "webpack-merge": "^2.6.1",
+    "zone.js": "^0.7.7"
+  },
+  "dependencies": {
+    "@angular/common": "^2.4.7",
+    "@angular/compiler": "^2.4.7",
+    "@angular/core": "^2.4.7"
+  }
+}
