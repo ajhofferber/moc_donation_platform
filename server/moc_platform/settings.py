@@ -55,12 +55,13 @@ INSTALLED_APPS = [
     'wagtail.wagtailsearch',
     'wagtail.wagtailadmin',
     'wagtail.wagtailcore',
-    'wagtail.contrib.wagtailapi',
+    'wagtail.api.v2',
     'wagtail.contrib.modeladmin',
     'modelcluster',
     'taggit',
 
     'artifacts',
+    'cms',
 ]
 
 MIDDLEWARE_CLASSES = [
