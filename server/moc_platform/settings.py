@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 import dj_database_url
 
+def env_to_bool(env_var, default=''):
+    return (os.getenv(env_var, default).lower() in ('true', '1', 'yes'))
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -149,5 +152,22 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 MEDIA_URL = '/media/'
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_BUCKET_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_CLOUDFRONT_DOMAIN = os.environ.get('AWS_CLOUDFRONT_DOMAIN')
+AWS_QUERYSTRING_AUTH = False
+
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+USE_S3_MEDIA = env_to_bool('USE_S3_MEDIA')
+if USE_S3_MEDIA:
+    DEFAULT_FILE_STORAGE = 'moc_platform.s3utils.MediaStorage'
+    MEDIA_URL = 'https://%s/%s/' % (AWS_CLOUDFRONT_DOMAIN or AWS_BUCKET_DOMAIN, MEDIAFILES_LOCATION)
+
+
+WHITENOISE_MAX_AGE = 3600 if not DEBUG else 0  # Cache for 1 hour
+WHITENOISE_GZIP_EXCLUDE_EXTENSIONS = ('jpg', 'jpeg', 'png', 'gif', 'webp', 'zip', 'gz', 'tgz', 'bz2', 'tbz', 'swf', 'flv', 'woff', 'mp4')
 
 WAGTAIL_SITE_NAME = "moc donation platform"
