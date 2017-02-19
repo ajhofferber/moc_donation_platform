@@ -5,7 +5,7 @@ RUN mkdir /code
 WORKDIR /code
 
 RUN npm install -g angular-cli
-COPY ./client/package.json /code/package.json
+COPY ./client/package.json /code
 RUN npm install --loglevel warn
 
 VOLUME /code/node_modules

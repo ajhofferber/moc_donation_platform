@@ -8,7 +8,7 @@ services:
       dockerfile: client.dockerfile
     command: npm start
     volumes:
-      - .:/code
+      - ./client:/code
   web:
     build:
       context: .
