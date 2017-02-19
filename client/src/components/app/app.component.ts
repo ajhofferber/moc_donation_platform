@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'capitalism',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor() {
+    console.log('hi im the app component', this);
+  }
+
+  wee = () => {
+    console.log('weee');
+  }
 }
