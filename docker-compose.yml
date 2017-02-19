@@ -9,6 +9,8 @@ services:
     command: npm start
     volumes:
       - ./client:/code
+    ports:
+      - "4201:4201"
   web:
     build:
       context: .
