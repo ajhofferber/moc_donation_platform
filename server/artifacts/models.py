@@ -28,5 +28,14 @@ class Artifact(models.Model):
     significance = models.TextField()
     owner_history = models.TextField(blank=True)
 
+    api_fields = [
+        'owner_name',
+        'name',
+        'location',
+        'description',
+        'materials',
+        'history'
+    ]
+
     def __str__(self):
         return self.name

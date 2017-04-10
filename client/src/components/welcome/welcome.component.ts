@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { WelcomeSplashComponent } from './welcome-splash.component';
 
 @Component({
   selector: 'welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  styleUrls: ['./welcome.component.css'],
+  directives: [WelcomeSplashComponent]
 })
 
 class WelcomeComponent {
