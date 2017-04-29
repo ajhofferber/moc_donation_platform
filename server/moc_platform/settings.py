@@ -137,10 +137,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
-MEDIA_URL = '/media/'
+STATIC_ROOT = join(BASE_DIR, 'static_root')
+STATIC_URL = '/assets/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static/dist/assets"),
+]
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
@@ -158,5 +160,3 @@ if USE_S3_MEDIA:
 
 WHITENOISE_MAX_AGE = 3600 if not DEBUG else 0  # Cache for 1 hour
 WHITENOISE_GZIP_EXCLUDE_EXTENSIONS = ('jpg', 'jpeg', 'png', 'gif', 'webp', 'zip', 'gz', 'tgz', 'bz2', 'tbz', 'swf', 'flv', 'woff', 'mp4')
-
-WAGTAIL_SITE_NAME = "moc donation platform"
