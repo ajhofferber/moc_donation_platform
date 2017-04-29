@@ -1,10 +1,15 @@
-Django>=1.10,<1.11
-wagtail==1.9
+Django>=1.11,<1.12
 psycopg2==2.6.2
-djangorestframework==3.5.4
+djangorestframework==3.6.2
 dj-database-url==0.4.2
-whitenoise==3.3.0
+django-cors-headers==2.0.2
 django-storages==1.5.2
 boto3==1.4.4
 
+#dev
 django-debug-toolbar
+ipdb
+
+#prod
+whitenoise==3.3.0
+gunicorn==19.7.1

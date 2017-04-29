@@ -7,7 +7,7 @@ class Artifact(models.Model):
         ('approved', 'approved'),
         ('selected', 'selected'),
     )
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='submitted')
     owner_name = models.CharField(max_length=255)
     owner_email = models.EmailField()
     name = models.CharField(max_length=255)
@@ -27,15 +27,6 @@ class Artifact(models.Model):
     history2 = models.TextField(blank=True)  # ????
     significance = models.TextField()
     owner_history = models.TextField(blank=True)
-
-    api_fields = [
-        'owner_name',
-        'name',
-        'location',
-        'description',
-        'materials',
-        'history'
-    ]
 
     def __str__(self):
         return self.name

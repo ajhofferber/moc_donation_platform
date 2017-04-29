@@ -1,13 +1,7 @@
-from rest_framework import serializer_class
-from artifacts.models import Artifact, STATUS_CHOICES
+from rest_framework import serializers
+from artifacts.models import Artifact
 
-class ArtifactSerializer(serializers.Serializer):
+class ArtifactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Artifact
-        fields = (id, status, owner_name, owner_email, name, location, description,
-        size, is_owned, is_in_posession, can_access_for_research, can_loan_temporarily,
-        can_loan_permanent, materials, history, creation, acquisition, use, history2,
-        significance, owner_history)
-
-        def create(self, validated_data):
-            return Artifact.objects.create(**validated_data)
+        fields = '__all__'

@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Artifact
+
+
+class ArtifactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'id')
+
+
+admin.site.register(Artifact, ArtifactAdmin)
