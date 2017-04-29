@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http'; 
+import { Http, Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 class ApiService {
 
-  private baseUrl = 'http://127.0.0.1:8000/api/';
+  private baseUrl = 'http://127.0.0.1:8000/api/selected_artifacts';
   constructor(public http: Http) {}
 
   public get(url: string): Promise<any> {
@@ -43,7 +43,7 @@ class ApiService {
   public getStuff(): Promise<any> {
     return this.get('');
   }
-  
+
 }
 
 export {

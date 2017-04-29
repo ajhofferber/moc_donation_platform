@@ -1,5 +1,5 @@
-nlimport { Component } from '@angular/core';
-import { WelcomeSplashComponent } from './welcome-splash.component';
+import { Component } from '@angular/core';
+import { ApiService } from 'service/api.service';
 
 @Component({
   selector: 'welcome',
@@ -10,6 +10,7 @@ import { WelcomeSplashComponent } from './welcome-splash.component';
 class WelcomeComponent {
   constructor() {
     console.log('i am welcome');
+    console.log(ApiService)
   }
 
   public currentContent;

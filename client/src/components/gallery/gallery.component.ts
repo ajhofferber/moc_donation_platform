@@ -9,7 +9,7 @@ import { ApiService } from '../../service/api.service';
 })
 
 class GalleryComponent {
-  public artifacts: any[] = [{img: 'someurl', title: 'taco'}];  
+  public artifacts: any[] = [{img: 'someurl', title: 'taco'}];
   constructor(private api: ApiService) {
     console.log('i am gallery');
     console.log('this is the api: ', api);
@@ -21,6 +21,7 @@ class GalleryComponent {
       //do stuff with res
       self.artifacts = res.data;
     });
+
   }
 
 

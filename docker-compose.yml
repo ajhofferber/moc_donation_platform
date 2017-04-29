@@ -6,7 +6,7 @@ services:
     build:
       context: .
       dockerfile: client.dockerfile
-    command: npm start
+    command: yarn start
     volumes:
       - ./client:/code
     ports:
