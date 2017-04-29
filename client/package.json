@@ -8,7 +8,10 @@
     "start": "ng serve --host 0.0.0.0 --port 4201 --live-reload-port 49153",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ng:deploy": "ng build --prod --output-hashing none",
+    "heroku-prebuild": "cd client; yarn global add @angular/cli; yarn",
+    "heroku-postbuild": "cd client; yarn run ng:deploy; cp -r dist ../server/static/"
   },
   "private": true,
   "dependencies": {
