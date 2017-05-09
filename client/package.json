@@ -13,6 +13,9 @@
     "heroku-prebuild": "cd client; yarn global add @angular/cli; yarn",
     "heroku-postbuild": "cd client; yarn run ng:deploy; cp -r dist ../server/static/"
   },
+  "engines": {
+    "node": "6.10.x"
+ },
   "private": true,
   "dependencies": {
     "@angular/cli": "1.0.0-beta.32.3",
