@@ -7,7 +7,9 @@ import { AppComponent } from './app.component';
 import { GalleryComponent } from '../gallery/gallery.component';
 import { SubmitComponent } from '../submit/submit.component';
 import { WelcomeComponent } from '../welcome/welcome.component';
+import { AboutComponent } from '../about/about.component';
 import { ApiService } from '../../service/api.service';
+
 
 import { RouterModule } from '@angular/router'
 import { appRoutes } from './../../app.router';
@@ -18,6 +20,7 @@ import { appRoutes } from './../../app.router';
     GalleryComponent,
     SubmitComponent,
     WelcomeComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

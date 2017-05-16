@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { 
+import {
+  AboutComponent,
   GalleryComponent,
   SubmitComponent,
   WelcomeComponent
@@ -8,6 +9,9 @@ import {
 
 const appRoutes: Routes = [
   {
+    path: 'about',
+    component: AboutComponent
+  }, {
     path: 'submit',
     component: SubmitComponent
   }, {
@@ -16,7 +20,7 @@ const appRoutes: Routes = [
   }, {
     path: '',
     component: WelcomeComponent
-  }
+  },
 ]
 
 export {

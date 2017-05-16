@@ -1,8 +1,16 @@
 
-<div (click)="setContent(hide)">
-  <h1 [class]=[showClass]>WELCOME</h1>
+<div (click)="enterSite()" [hidden]="entered">
+  <h1>Bring Capialism To The Museum</h1>
 </div>
 
-<div>
-  <h3>yepppppp</h3>
+<div *ngIf="entered">
+  <p>
+    The Museum of Capitalism is an institution dedicated to educating this generation and future
+    generations about the ideology, history, and legacy of capitalism. We work with people from all
+    walks of life, from all over the world, to identify artifacts for cataloging and possible
+    inclusion in future exhibits. Each one of us has a story to tell that adds something to the larger
+    story of capitalism.  Help us tell it!
+  </p>
+  <a href="/submit">Suggest an Artifact</a>
+  <a href="/about">Learn More</a>
 </div>

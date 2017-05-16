@@ -8,19 +8,14 @@ import { ApiService } from 'service/api.service';
 })
 
 class WelcomeComponent {
+  entered: boolean;
   constructor() {
     console.log('i am welcome');
     console.log(ApiService)
   }
 
-  public currentContent;
-
-  public setContent = (content) => {
-    console.log("hey")
-    if (this.currentContent === content) return;
-    console.log(this.currentContent)
-    this.currentContent = content;
-
+  public enterSite = () => {
+    this.entered = true
   }
 }
 
