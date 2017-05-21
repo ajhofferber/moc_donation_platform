@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Artifact } from '../components/submit/submit.models';
 import { Http, Headers, RequestOptions } from '@angular/http';
+import { API_URL } from './constants';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ApiService {
     constructor (private http: Http) {}
-    private apiUrl = 'http://localhost:8000/api/artifacts/';
+    private apiUrl = API_URL + '/api/artifacts/';
 
     getArtifacts() {
       let headers = new Headers();
