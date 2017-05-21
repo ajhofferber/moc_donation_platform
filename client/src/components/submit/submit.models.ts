@@ -1,4 +1,4 @@
-export interface ArtifactSubmit {
+export class Artifact {
   owner_name: string;
   owner_email: string;
   name: {

@@ -1,16 +1,16 @@
-<form #artifactForm="ngForm" (ngSubmit)="onSubmit(artifactForm)">
+<form #artifactForm="ngForm" (ngSubmit)="onSubmit()" id="artifactForm">
   <div [hidden]=hideCharacteristics>
     <p>My name is</p>
-    <input type="text" name='owner_name' ngModel>
+    <input type="text" required [(ngModel)]='artifact.owner_name' name='owner_name'>
     <p>and I'm from</p>
-    <input type="text" ngModel name='location'>
+    <input type="text" required [(ngModel)]='artifact.location' name='location'>
     <span ngModelGroup="name">
       <p>I think that</p>
-      <input type="text" ngModel name='name'>
+      <input type="text" required [(ngModel)]='artifact.name' name='name'>
     </span>
     <p>should be included in the Musum of Capitalism.</p>
     <p>This item belongs in a Museum of Capitalism because</p>
-    <textarea ngModel name='significance'></textarea>
+    <textarea required [(ngModel)]='artifact.significance' name='significance'></textarea>
     <a (click)="hideCharacteristics = !hideCharacteristics">next</a>
   </div>
 
@@ -20,16 +20,16 @@
     <input type="text" name='materials' ngModel>
     <span ngModelGroup="size">
       <p>its size is about</p>
-      <input type="text" name='width' ngModel>
+      <input type="text" name='width' ([ngModel])='artifact.size.width'>
       <p>wide,</p>
-      <input type="text" name='height' ngModel>
+      <input type="text" name='height' ([ngModel])='artifact.size.height'>
       <p>tall, and</p>
-      <input type="text" name='depth' ngModel>
+      <input type="text" name='depth' ([ngModel])='artifact.size.depth'>
       <p>deep, or about the same size as</p>
-      <input type="text" name='estimate' ngModel>
+      <input type="text" name='estimate' ([ngModel])='artifact.size.estimate'>
     </span>
     <p>Let me describe what it looks like:</p>
-    <textarea name='description' ngModel></textarea>
+    <textarea name='description' ([ngModel])='artifact.description'></textarea>
     <a (click)="hideHistory = !hideHistory">next</a>
   </div>
 
@@ -37,37 +37,37 @@
     <h2>History</h2>
     <span ngModelGroup="creation">
       <p>This item was created by</p>
-      <input type="text" name='who' ngModel>
+      <input type="text" name='who' ([ngModel])='artifact.creation.who'>
       <p>around the year</p>
-      <input type="text" name='when' ngModel>
+      <input type="text" name='when' ([ngModel])='artifact.creation.when'>
       <p>in a place called</p>
-      <input type="text" name='where' ngModel>
+      <input type="text" name='where' ([ngModel])='artifact.creation.where'>
     </span>
     <p>I know about it because</p>
-    <input type="text" name='history' ngModel>
+    <input type="text" name='history' ([ngModel])='artifact.history'>
     <p>My role in capitalism was</p>
-    <input type="text" name='owner_history' ngModel>
+    <input type="text" name='owner_history' ([ngModel])='artifact.owner_history'>
     <a (click)="hideOptional = !hideOptional">next</a>
   </div>
 
   <div *ngIf="hideOptional" [hidden]=hideEmail>
     <h2>Optional Details</h2>
     <p>The way this item was used was</p>
-    <input type="text" name='use' ngModel>
+    <input type="text" name='use' ([ngModel])='artifact.use'>
     <span ngModelGroup="name">
       <p>other names for it might be</p>
-      <input type="text" name='alternate' ngModel>
+      <input type="text" name='alternate' ([ngModel])='artifact.alternate'>
     </span>
     <a (click)="hideEmail = !hideEmail">next</a>
   </div>
 
   <div *ngIf="hideEmail">
     <h2>Let's get your Artifact Submitted</h2>
-    <label ([ngModel])=artifact.owner_email>Enter your email</label>
-    <input type="text" required><br>
+    <label>Enter your email</label>
+    <input type="text" ([ngModel])='artifact.owner_email'required name='owner_email'><br>
 <!-- Need to go in and make this a validator field -->
-    <label ([ngModel])=artifact.owner_email>Re-enter just to check</label>
-    <input type="text"><br>
+    <label>Re-enter just to check</label>
+    <input type="text" ([ngModel])='artifact.owner_email' required name='owner_email'><br>
     <button type="submit">Submit!</button>
   </div>
 </form>

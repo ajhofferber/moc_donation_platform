@@ -4,29 +4,53 @@
 # from rest_framework.views import APIView
 # from rest_framework.response import Response
 # from rest_framework import generics
-
-from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework import viewsets, status
+# from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Artifact
 from .serializers import ArtifactSerializer
 
-@api_view(['GET', 'POST'])
-def artifact_list(request):
-    """
-    List all artifacts, or create a new artifact.
-    """
-    if request.method == 'GET':
-        artifacts = Artifact.objects.filter(status="selected")
-        serializer = ArtifactSerializer(artifacts, many=True)
-        return Response(serializer.data)
+class ArtifactViewSet(viewsets.ModelViewSet):
+    queryset = Artifact.objects.filter(status="selected")
+    serializer_class = ArtifactSerializer
 
-    elif request.method == 'POST':
-        serializer = ArtifactSerializer(data=request.data)
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    # def get(self, request, format=None):
+    #     artifacts = Artifact.objects.filter(status="selected")
+    #     serializer = ArtifactSerializer(artifacts, many=True)
+    #     return Response(serializer.data)
+    #
+    # def post(self, request, format=None):
+    #     serializer = ArtifactSerializer(data=request.data)
+    #     print(request)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# @api_view(['GET', 'POST'])
+# def artifact_list(self, request, pk, format=None):
+#     """
+#     List all artifacts, or create a new artifact.
+#     """
+#     if request.method == 'GET':
+#         artifacts = Artifact.objects.filter(status="selected")
+#         serializer = ArtifactSerializer(artifacts, many=True)
+#         return Response(serializer.data)
+
+    # elif request.method == 'POST':
+    #     serializer = ArtifactSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # Create your views here.
 

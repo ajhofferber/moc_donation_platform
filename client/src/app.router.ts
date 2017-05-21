@@ -9,13 +9,13 @@ import {
 
 const appRoutes: Routes = [
   {
-    path: 'about',
+    path: 'thanks',
     component: AboutComponent
   }, {
     path: 'submit',
     component: SubmitComponent
   }, {
-    path: 'gallery',
+    path: 'about',
     component: GalleryComponent
   }, {
     path: '',
