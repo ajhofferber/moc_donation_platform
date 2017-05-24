@@ -30,10 +30,11 @@
     </span>
     <p>Let me describe what it looks like:</p>
     <textarea name='description' ([ngModel])='artifact.description'></textarea>
+    <a (click)="hideCharacteristics = !hideCharacteristics">back</a>
     <a (click)="hideHistory = !hideHistory">next</a>
   </div>
 
-  <div *ngIf="hideHistory" [hidden]=hideOptional>
+  <div *ngIf="hideHistory" [hidden]=hideOptional >
     <h2>History</h2>
     <span ngModelGroup="creation">
       <p>This item was created by</p>
@@ -47,6 +48,7 @@
     <input type="text" name='history' ([ngModel])='artifact.history'>
     <p>My role in capitalism was</p>
     <input type="text" name='owner_history' ([ngModel])='artifact.owner_history'>
+    <a (click)="hideHistory = !hideHistory">back</a>
     <a (click)="hideOptional = !hideOptional">next</a>
   </div>
 
@@ -58,6 +60,7 @@
       <p>other names for it might be</p>
       <input type="text" name='alternate' ([ngModel])='artifact.alternate'>
     </span>
+    <a (click)="hideOptional = !hideOptional">back</a>
     <a (click)="hideEmail = !hideEmail">next</a>
   </div>
 
@@ -68,6 +71,7 @@
 <!-- Need to go in and make this a validator field -->
     <label>Re-enter just to check</label>
     <input type="text" ([ngModel])='artifact.owner_email' required name='owner_email'><br>
+    <a (click)="hideEmail = !hideEmail">back</a>
     <button type="submit">Submit!</button>
   </div>
 </form>
