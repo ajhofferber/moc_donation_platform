@@ -4,12 +4,3 @@ body{
   text-align: center;
   color: black;
 }
-
-a:hover{
-  cursor: pointer;
-}
-
-capitalism{
-  display: flex;
-  flex-direction: column;
-}
