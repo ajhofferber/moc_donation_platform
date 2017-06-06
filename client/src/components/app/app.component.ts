@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'capitalism',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['../styles.scss', './app.component.scss']
 })
 export class AppComponent {
   constructor() {
