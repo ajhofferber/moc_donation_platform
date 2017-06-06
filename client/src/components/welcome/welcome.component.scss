@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'capitalist';
+    src: url(../../assets/fonts/Capitalist_Sans_Regular_03.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'cardo';
+    src: url(../../assets/fonts/Cardo-Regular.ttf) format('truetype');
+}
+
+
+.title-text{
+  font-family: 'capitalist';
+}
+
+
+.title-text:hover{
+  cursor: pointer;
+}
+
+p {
+  text-align: center;
+  font-family: 'cardo';
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: 'cardo';
+}
+
+a:hover {
+  text-decoration: underline;
+}

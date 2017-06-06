@@ -4,14 +4,12 @@ import { ApiService } from 'service/api.service';
 @Component({
   selector: 'welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css'],
+  styleUrls: ['./welcome.component.scss'],
 })
 
 class WelcomeComponent {
   entered: boolean;
   constructor() {
-    console.log('i am welcome');
-    console.log(ApiService)
   }
 
   public enterSite = () => {
