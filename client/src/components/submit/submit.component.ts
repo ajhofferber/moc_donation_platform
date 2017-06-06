@@ -6,7 +6,7 @@ import { Router } from '@angular/router'
 @Component({
   selector: 'submit',
   templateUrl: './submit.component.html',
-  styleUrls: ['./submit.component.css'],
+  styleUrls: ['./submit.component.scss'],
 })
 
 class SubmitComponent {

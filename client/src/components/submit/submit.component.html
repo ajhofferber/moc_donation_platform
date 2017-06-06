@@ -1,77 +1,87 @@
-<form #artifactForm="ngForm" (ngSubmit)="onSubmit()" id="artifactForm">
+<div class="container">
+<form #artifactForm="ngForm" (ngSubmit)="onSubmit()" id="artifactForm" class="main">
   <div [hidden]=hideCharacteristics>
-    <p>My name is</p>
-    <input type="text" required [(ngModel)]='artifact.owner_name' name='owner_name'>
-    <p>and I'm from</p>
-    <input type="text" required [(ngModel)]='artifact.location' name='location'>
+    My name is
+      <input type="text" required autofocus [(ngModel)]='artifact.owner_name' name='owner_name' placeholder="Your Name (required)">
+    and I'm from
+    <input type="text" required autofocus [(ngModel)]='artifact.location' name='location' placeholder="Location (required)">
     <span ngModelGroup="name">
-      <p>I think that</p>
-      <input type="text" required [(ngModel)]='artifact.name' name='name'>
+      I think that
+      <input type="text" required autofocus [(ngModel)]='artifact.name' name='name' placeholder="Artifact (required)">
     </span>
-    <p>should be included in the Musum of Capitalism.</p>
-    <p>This item belongs in a Museum of Capitalism because</p>
-    <textarea required [(ngModel)]='artifact.significance' name='significance'></textarea>
-    <a (click)="hideCharacteristics = !hideCharacteristics">next</a>
+    should be included in the Musum of Capitalism. This item belongs in a Museum of Capitalism because<br>
+    <input class="textarea" type="text" required [(ngModel)]='artifact.significance' name='significance' placeholder="Tell Us About The Artifact's Significance (required)">
+    <div class="next">
+      <a (click)="hideCharacteristics = !hideCharacteristics">next</a>
+    </div>
   </div>
 
   <div *ngIf="hideCharacteristics" [hidden]=hideHistory>
     <h2>Characteristics</h2>
-    <p>This item is made of</p>
-    <input type="text" name='materials' ngModel>
+    This item is made of
+    <input type="text" name='materials' ngModel placeholder="Materials">
     <span ngModelGroup="size">
-      <p>its size is about</p>
-      <input type="text" name='width' ([ngModel])='artifact.size.width'>
-      <p>wide,</p>
-      <input type="text" name='height' ([ngModel])='artifact.size.height'>
-      <p>tall, and</p>
-      <input type="text" name='depth' ([ngModel])='artifact.size.depth'>
-      <p>deep, or about the same size as</p>
-      <input type="text" name='estimate' ([ngModel])='artifact.size.estimate'>
+      its size is about
+      <input type="text" name='width' ([ngModel])='artifact.size.width' placeholder="Width">
+      wide,
+      <input type="text" name='height' ([ngModel])='artifact.size.height' placeholder="Height">
+      tall, and
+      <input type="text" name='depth' ([ngModel])='artifact.size.depth' placeholder="Depth">
+      deep, or about the same size as
+      <input type="text" name='estimate' ([ngModel])='artifact.size.estimate' placeholder="Got An Estimate?">
     </span>
-    <p>Let me describe what it looks like:</p>
-    <textarea name='description' ([ngModel])='artifact.description'></textarea>
-    <a (click)="hideCharacteristics = !hideCharacteristics">back</a>
-    <a (click)="hideHistory = !hideHistory">next</a>
+    Let me describe what it looks like:<br>
+    <input type="text" class="textarea" name='description' ([ngModel])='artifact.description' placeholder="Description?">
+    <div class="next">
+      <a (click)="hideCharacteristics = !hideCharacteristics">back</a>
+      <a (click)="hideHistory = !hideHistory">next</a>
+    </div>
   </div>
 
   <div *ngIf="hideHistory" [hidden]=hideOptional >
     <h2>History</h2>
     <span ngModelGroup="creation">
-      <p>This item was created by</p>
-      <input type="text" name='who' ([ngModel])='artifact.creation.who'>
-      <p>around the year</p>
-      <input type="text" name='when' ([ngModel])='artifact.creation.when'>
-      <p>in a place called</p>
-      <input type="text" name='where' ([ngModel])='artifact.creation.where'>
+      This item was created by
+      <input type="text" name='who' ([ngModel])='artifact.creation.who' placeholder="Who">
+      around the year
+      <input type="text" name='when' ([ngModel])='artifact.creation.when' placeholder="When">
+      in a place called
+      <input type="text" name='where' ([ngModel])='artifact.creation.where' placeholder="Where">.
     </span>
-    <p>I know about it because</p>
-    <input type="text" name='history' ([ngModel])='artifact.history'>
-    <p>My role in capitalism was</p>
-    <input type="text" name='owner_history' ([ngModel])='artifact.owner_history'>
-    <a (click)="hideHistory = !hideHistory">back</a>
-    <a (click)="hideOptional = !hideOptional">next</a>
+    I know about it because
+    <input type="text" class="textarea" name='history' ([ngModel])='artifact.history' placeholder="Tell Us About It's History">
+    My role in capitalism was
+    <input class="textarea"type="text" name='owner_history' ([ngModel])='artifact.owner_history' placeholder="Did you have a role?">
+    <div class="next">
+      <a (click)="hideHistory = !hideHistory">back</a>
+      <a (click)="hideOptional = !hideOptional">next</a>
+    </div>
   </div>
 
   <div *ngIf="hideOptional" [hidden]=hideEmail>
     <h2>Optional Details</h2>
-    <p>The way this item was used was</p>
-    <input type="text" name='use' ([ngModel])='artifact.use'>
+    The way this item was used was
+    <input type="text" class="textarea" name='use' ([ngModel])='artifact.use' placeholder="Usage">
     <span ngModelGroup="name">
-      <p>other names for it might be</p>
-      <input type="text" name='alternate' ([ngModel])='artifact.alternate'>
+      other names for it might be
+      <input type="text" name='alternate' ([ngModel])='artifact.alternate' placeholder="Other Names">
     </span>
-    <a (click)="hideOptional = !hideOptional">back</a>
-    <a (click)="hideEmail = !hideEmail">next</a>
+    <div class="next">
+      <a (click)="hideOptional = !hideOptional">back</a>
+      <a (click)="hideEmail = !hideEmail">next</a>
+    </div>
   </div>
 
   <div *ngIf="hideEmail">
     <h2>Let's get your Artifact Submitted</h2>
-    <label>Enter your email</label>
+    Enter your email
     <input type="text" ([ngModel])='artifact.owner_email'required name='owner_email'><br>
 <!-- Need to go in and make this a validator field -->
-    <label>Re-enter just to check</label>
+    Re-enter just to check
     <input type="text" ([ngModel])='artifact.owner_email' required name='owner_email'><br>
-    <a (click)="hideEmail = !hideEmail">back</a>
-    <button type="submit">Submit!</button>
+    <div class="next">
+      <a (click)="hideEmail = !hideEmail">back</a>
+      <button type="submit">Submit!</button>
+    </div>
   </div>
 </form>

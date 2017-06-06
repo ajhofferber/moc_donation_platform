@@ -1,0 +1,119 @@
+.container{
+  height: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  text-align: center;
+  width: 80%;
+  font-family: futura;
+  font-size: 30px;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.next {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  color: blue;
+}
+
+a{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+a:hover{
+  color: red;
+  cursor: pointer;
+}
+
+fieldset, input {
+  text-align: center;
+  font-family: futura;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+fieldset {
+  width: 400px;
+  margin: 1.5em auto;
+  color: pink;
+  border-top: 1px solid rgba(112,128,144, 0.35);
+  border-right: 0px;
+  border-bottom: none;
+  border-left: 0px;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  box-shadow: 0 4px 3px -3px rgba(112,128,144, 0.5);
+}
+
+ul {
+  padding-left: 1.5em;
+}
+
+label {
+  font-size: 1.5em;
+  padding-left: 1em;
+  line-height: 2em;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  border: none;
+  color: pink;
+  background: transparent;
+  border-bottom: 1px dotted MediumSeaGreen;
+  width: 170px;
+  margin-left: .25em;
+  line-height: 1.8em;
+}
+
+.textarea {
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-color: Aqua;
+  color: white;
+}
+
+::-webkit-input-placeholder {
+   color: Lightgray;
+}
+:-moz-placeholder {
+   color: Lightgray;
+}
+:-ms-input-placeholder {
+   color: Lightgray;
+}
+:input-placeholder {
+   color: Lightgray;
+}
+
+button {
+  font-size: 1em;
+  font-family: futura;
+  color: blue;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  color: green;
+}
