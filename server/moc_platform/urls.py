@@ -14,8 +14,6 @@ urlpatterns = [
     # url(r'^api/', include('artifacts.urls')),
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^.*/$', TemplateView.as_view(template_name="spa.html")),
-    url(r'^$', TemplateView.as_view(template_name="spa.html")),
 ]
 
 if settings.DEBUG:
