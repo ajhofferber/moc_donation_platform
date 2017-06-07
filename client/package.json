@@ -11,7 +11,7 @@
     "e2e": "ng e2e",
     "ng:deploy": "ng build --prod",
     "heroku-prebuild": "cd client; yarn global add @angular/cli; yarn",
-    "heroku-postbuild": "cd client; yarn run ng:deploy; cp -r dist ../server/static/"
+    "heroku-postbuild": "cd client; yarn run ng:deploy; cp -r dist ../server/"
   },
   "engines": {
     "node": "6.10.x"
