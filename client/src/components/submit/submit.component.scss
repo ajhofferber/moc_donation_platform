@@ -1,6 +1,7 @@
 .container{
   height: 600px;
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,6 +131,7 @@ button {
   background: transparent;
   border: none;
   cursor: pointer;
+  margin-top: -9px;
 }
 
 button:hover {

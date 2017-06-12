@@ -1,9 +1,19 @@
 .title-text{
   font-family: 'capitalist';
+  font-size: 12vh;
+}
+
+.entered {
+    width: 100%;
 }
 
 .links-container{
 
+}
+
+.title-container {
+  text-align: left;
+  width: 50%;
 }
 
 .title-text:hover{
@@ -27,4 +37,14 @@ p {
 
 .links:hover {
   font-family: 'capitalist';
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .title-text{
+    font-size: 5vh;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
 }
