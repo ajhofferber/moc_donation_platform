@@ -5,7 +5,7 @@ import { ApiService } from '../../service/api.service';
 @Component({
   selector: 'gallery',
   templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.css'],
+  styleUrls: ['./gallery.component.scss'],
 })
 
 class GalleryComponent implements OnInit{
@@ -20,7 +20,6 @@ class GalleryComponent implements OnInit{
   getArtifacts = () => {
     this.api
         .getArtifacts()
-
         .then(artifacts => this.artifacts = artifacts)
         .then(artifacts  => console.log(artifacts))
         .catch(error => this.error = error);

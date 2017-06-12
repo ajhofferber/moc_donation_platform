@@ -4,7 +4,10 @@
 <p>
 Artifacts may be printed materials, three-dimensional objects, or entire collections, and may consist of documents, correspondence, diaries, clothing, uniforms, and textiles, photographs and moving images, advertisements, trade publications and promotional materials, currencies, receipts, and other elements of consumer exchange, and samples of raw materials, finished products, or fragments of capitalist production. You can also submit things that aren’t single objects, like specific places or events, or even more abstract things like feelings.
 </p>
-<ul>
-  <h2>Here are some artifacts!</h2>
-  <li *ngFor="let artifact of artifacts">{{artifact.name}}</li>
-</ul>
+<div class="container">
+  <a class="links" href="/submit">Submit An Artifact</a>
+  <ul *ngIf="!artifacts">
+    <h2>Here are some artifacts!</h2>
+    <li *ngFor="let artifact of artifacts">{{artifact.name}}</li>
+  </ul>
+</div>

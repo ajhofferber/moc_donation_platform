@@ -4,13 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  line-height: 1.7;
 }
 
 form{
   text-align: center;
-  width: 80%;
-  font-family: futura;
-  font-size: 30px;
+  font-family: 'cardo';
+  font-size: 1.7em;
 }
 
 *, *:before, *:after {
@@ -28,9 +28,22 @@ form{
   color: blue;
 }
 
+.email {
+  width: 50%;
+}
+
 a{
-  margin-left: 1em;
-  margin-right: 1em;
+  margin-left: 12em;
+  margin-right: 12em;
+  font-size: .6em;
+  text-transform: uppercase;
+}
+a:first-child {
+  margin-left: 0em;
+}
+
+a:last-child {
+  margin-right: 0em;
 }
 
 a:hover{
@@ -40,15 +53,19 @@ a:hover{
 
 fieldset, input {
   text-align: center;
-  font-family: futura;
-  font-size: 16px;
+  font-family: "Helvetica Neue";
+  text-transform: uppercase;
+  font-size: .5em;
   line-height: 1.5em;
+}
+
+h2 {
+  margin-bottom: 2%;
 }
 
 fieldset {
   width: 400px;
   margin: 1.5em auto;
-  color: pink;
   border-top: 1px solid rgba(112,128,144, 0.35);
   border-right: 0px;
   border-bottom: none;
@@ -74,22 +91,22 @@ ul {
 
 input {
   border: none;
-  color: pink;
+  color: black;
   background: transparent;
-  border-bottom: 1px dotted MediumSeaGreen;
+  border-bottom: 1px dotted slategrey;
   width: 170px;
   margin-left: .25em;
   line-height: 1.8em;
 }
 
 .textarea {
-  width: 100%;
+  width: 98%;
 }
 
 input:focus {
   outline: none;
-  border-color: Aqua;
-  color: white;
+  border-color: grey;
+  color: grey;
 }
 
 ::-webkit-input-placeholder {
@@ -106,8 +123,9 @@ input:focus {
 }
 
 button {
+  text-align: center;
+  font-family: 'cardo';
   font-size: 1em;
-  font-family: futura;
   color: blue;
   background: transparent;
   border: none;

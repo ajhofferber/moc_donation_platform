@@ -1,0 +1,42 @@
+body{
+  background-color: rgb(206, 206, 206);
+  text-align: center;
+  color: black;
+}
+
+p {
+  text-align: center;
+  font-family: 'cardo';
+  line-height: 1.7em;
+  font-size: 1em;
+  letter-spacing: 0.6px;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.links {
+  text-decoration: none;
+  color: black;
+  font-family: "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  font-family: 'capitalist';
+  margin-top: 4%;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+//
+// a:hover{
+//   font-family: 'capitalist';
+// }

@@ -4,13 +4,13 @@
     My name is
       <input type="text" required autofocus [(ngModel)]='artifact.owner_name' name='owner_name' placeholder="Your Name (required)">
     and I'm from
-    <input type="text" required autofocus [(ngModel)]='artifact.location' name='location' placeholder="Location (required)">
+    <input type="text" required autofocus [(ngModel)]='artifact.location' name='location' placeholder="Location (required)">.
     <span ngModelGroup="name">
       I think that
       <input type="text" required autofocus [(ngModel)]='artifact.name' name='name' placeholder="Artifact (required)">
     </span>
     should be included in the Musum of Capitalism. This item belongs in a Museum of Capitalism because<br>
-    <input class="textarea" type="text" required [(ngModel)]='artifact.significance' name='significance' placeholder="Tell Us About The Artifact's Significance (required)">
+    <input class="textarea" type="text" required [(ngModel)]='artifact.significance' name='significance' placeholder="Tell Us About The Artifact's Significance (required)">.
     <div class="next">
       <a (click)="hideCharacteristics = !hideCharacteristics">next</a>
     </div>
@@ -28,10 +28,10 @@
       tall, and
       <input type="text" name='depth' ([ngModel])='artifact.size.depth' placeholder="Depth">
       deep, or about the same size as
-      <input type="text" name='estimate' ([ngModel])='artifact.size.estimate' placeholder="Got An Estimate?">
+      <input type="text" name='estimate' ([ngModel])='artifact.size.estimate' placeholder="Got An Estimate?">.
     </span>
     Let me describe what it looks like:<br>
-    <input type="text" class="textarea" name='description' ([ngModel])='artifact.description' placeholder="Description?">
+    <input type="text" class="textarea" name='description' ([ngModel])='artifact.description' placeholder="Description?">.
     <div class="next">
       <a (click)="hideCharacteristics = !hideCharacteristics">back</a>
       <a (click)="hideHistory = !hideHistory">next</a>
@@ -49,9 +49,9 @@
       <input type="text" name='where' ([ngModel])='artifact.creation.where' placeholder="Where">.
     </span>
     I know about it because
-    <input type="text" class="textarea" name='history' ([ngModel])='artifact.history' placeholder="Tell Us About It's History">
+    <input type="text" class="textarea" name='history' ([ngModel])='artifact.history' placeholder="Tell Us About It's History">.
     My role in capitalism was
-    <input class="textarea"type="text" name='owner_history' ([ngModel])='artifact.owner_history' placeholder="Did you have a role?">
+    <input class="textarea"type="text" name='owner_history' ([ngModel])='artifact.owner_history' placeholder="Did you have a role?">.
     <div class="next">
       <a (click)="hideHistory = !hideHistory">back</a>
       <a (click)="hideOptional = !hideOptional">next</a>
@@ -61,10 +61,10 @@
   <div *ngIf="hideOptional" [hidden]=hideEmail>
     <h2>Optional Details</h2>
     The way this item was used was
-    <input type="text" class="textarea" name='use' ([ngModel])='artifact.use' placeholder="Usage">
+    <input type="text" class="textarea" name='use' ([ngModel])='artifact.use' placeholder="Usage">.
     <span ngModelGroup="name">
-      other names for it might be
-      <input type="text" name='alternate' ([ngModel])='artifact.alternate' placeholder="Other Names">
+      Other names for it might be
+      <input type="text" name='alternate' ([ngModel])='artifact.alternate' placeholder="Other Names">.
     </span>
     <div class="next">
       <a (click)="hideOptional = !hideOptional">back</a>
@@ -75,13 +75,13 @@
   <div *ngIf="hideEmail">
     <h2>Let's get your Artifact Submitted</h2>
     Enter your email
-    <input type="text" ([ngModel])='artifact.owner_email'required name='owner_email'><br>
+    <input type="text" class="email" ([ngModel])='artifact.owner_email'required name='owner_email'><br>
 <!-- Need to go in and make this a validator field -->
     Re-enter just to check
-    <input type="text" ([ngModel])='artifact.owner_email' required name='owner_email'><br>
+    <input type="text" class="email" ([ngModel])='artifact.owner_email' required name='owner_email'><br>
     <div class="next">
       <a (click)="hideEmail = !hideEmail">back</a>
-      <button type="submit">Submit!</button>
+      <button type="submit"><a>Submit!</a></button>
     </div>
   </div>
 </form>

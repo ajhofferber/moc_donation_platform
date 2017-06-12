@@ -1,10 +1,10 @@
-
-
-
 .title-text{
   font-family: 'capitalist';
 }
 
+.links-container{
+
+}
 
 .title-text:hover{
   cursor: pointer;
@@ -13,14 +13,18 @@
 p {
   text-align: center;
   font-family: 'cardo';
+  line-height: 1.7em;
+  font-size: 1.3em;
+  letter-spacing: 0.6px;
 }
 
-a {
+.links {
   text-decoration: none;
   color: black;
-  font-family: 'cardo';
+  font-family: "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
 }
 
-a:hover {
-  text-decoration: underline;
+.links:hover {
+  font-family: 'capitalist';
 }
